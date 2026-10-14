@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>sc_req_item</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="sc_req_item">state=-5^EQ<item display_value="Pending" endquery="false" field="state" goto="false" newquery="false" operator="=" or="false" value="-5"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Create Incident on License Issue</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous) {
+
+    // Confirm that the Requested Item moved to Pending.
+    if (current.state != '-5') {
+        return;
+    }
+
+    var ritmNumber = current.getValue('number');
+    var shortDescription = 'License issue for ' + ritmNumber;
+
+    // Prevent duplicate incidents for this Requested Item.
+    var existing = new GlideRecord('incident');
+    existing.addQuery('short_description', shortDescription);
+    existing.addQuery(
+        'description',
+        'CONTAINS',
+        'Requested Item: ' + ritmNumber
+    );
+    existing.setLimit(1);
+    existing.query();
+
+    if (existing.next()) {
+        return;
+    }
+
+    // Initialize a new Incident.
+    var inc = new GlideRecord('incident');
+    inc.initialize();
+
+    inc.setValue('short_description', shortDescription);
+
+    inc.setValue(
+        'description',
+        'The software request requires investigation due to a license issue.\n' +
+        'Requested Item: ' + ritmNumber + '\n' +
+        'Please verify license availability and determine the next action.'
+    );
+
+    // Set the caller from the Requested Item.
+    var requestedFor = current.getValue('requested_for');
+
+    if (requestedFor) {
+        inc.setValue('caller_id', requestedFor);
+    }
+
+    // Set impact and urgency to low.
+    inc.setValue('impact', '3');
+    inc.setValue('urgency', '3');
+
+    // Assign to Software Support if the group exists.
+    var group = new GlideRecord('sys_user_group');
+    group.addQuery('name', 'Software Support');
+    group.setLimit(1);
+    group.query();
+
+    if (group.next()) {
+        inc.setValue('assignment_group', group.getUniqueValue());
+    }
+
+    // Insert the Incident.
+    var incidentId = inc.insert();
+
+    if (!incidentId) {
+        gs.error(
+            'Failed to create Incident for Requested Item ' + ritmNumber
+        );
+    }
+		
+})(current, previous);
+]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-14 15:50:56</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>5f288c3fc3f70b106346fbfdd40131ad</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Create Incident on License Issue</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Licensed Software Installation Automation" source="x_2052380_licens_0">259973e3c3b70b106346fbfdd40131ae</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_update_name>sys_script_5f288c3fc3f70b106346fbfdd40131ad</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-14 16:05:47</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=5f288c3fc3f70b106346fbfdd40131ad"/>
+</record_update>
