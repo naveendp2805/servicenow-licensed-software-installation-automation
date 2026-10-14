@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="88118cffc3b70b106346fbfdd40131d5" label="Software Inventory" max_length="40" name="x_2052380_licens_0_software_inventory" type="collection">
+        <element label="Description" max_length="500" name="description" type="string"/>
+        <element default="True" label="Active" max_length="40" name="active" type="boolean"/>
+        <element label="Software Version" mandatory="true" max_length="40" name="software_version" type="string"/>
+        <element label="Software Name" mandatory="true" max_length="40" name="software_name" type="string"/>
+        <element choice="1" label="License Type" mandatory="true" max_length="40" name="license_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Subscription" sequence="2" value="subscription"/>
+                <element inactive_on_update="false" label="Enterprise" sequence="3" value="enterprise"/>
+                <element inactive_on_update="false" label="Commercial" sequence="0" value="commercial"/>
+                <element inactive_on_update="false" label="Open Source" sequence="1" value="open_source"/>
+            </choice>
+        </element>
+        <element label="Total Licenses" mandatory="true" max_length="40" name="total_licenses" type="integer"/>
+        <element label="Available Licenses" mandatory="true" max_length="40" name="available_licenses" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Vendor" max_length="40" name="vendor" type="string"/>
+        <element label="Software Owner" mandatory="true" max_length="32" name="software_owner" reference="sys_user" type="reference"/>
+        <index name="index">
+            <element name="software_owner"/>
+        </index>
+    </element>
+</database>
