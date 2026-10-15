@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_2052380_licens_0.LicensedSoftwareManagerAjax</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>LicensedSoftwareManagerAjax</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var LicensedSoftwareManagerAjax = Class.create();
+
+LicensedSoftwareManagerAjax.prototype = Object.extendsObject(
+    global.AbstractAjaxProcessor,
+    {
+        getManager: function() {
+            var userId = this.getParameter('sysparm_user_id');
+
+            if (!userId) {
+                return '';
+            }
+
+            var user = new GlideRecord('sys_user');
+
+            if (!user.get(userId)) {
+                return '';
+            }
+
+            return user.getValue('manager') || '';
+        },
+
+        type: 'LicensedSoftwareManagerAjax'
+    }
+);]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-15 10:53:19</sys_created_on>
+        <sys_id>a214140cc3049b106346fbfdd40131aa</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>LicensedSoftwareManagerAjax</sys_name>
+        <sys_package display_value="Licensed Software Installation Automation" source="x_2052380_licens_0">259973e3c3b70b106346fbfdd40131ae</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_update_name>sys_script_include_a214140cc3049b106346fbfdd40131aa</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-15 11:07:39</sys_updated_on>
+    </sys_script_include>
+</record_update>

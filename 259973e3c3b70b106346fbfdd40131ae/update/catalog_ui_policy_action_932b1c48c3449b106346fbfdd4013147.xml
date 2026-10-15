@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="catalog_ui_policy_action">
+    <catalog_ui_policy_action action="INSERT_OR_UPDATE">
+        <catalog_item display_value="Licensed Software Installation Request">e7d58080c3c09b106346fbfdd4013135</catalog_item>
+        <catalog_variable>IO:bbd808c4c3c09b106346fbfdd40131da</catalog_variable>
+        <cleared>false</cleared>
+        <disabled>true</disabled>
+        <field/>
+        <field_message/>
+        <field_message_type>none</field_message_type>
+        <mandatory>ignore</mandatory>
+        <order>100</order>
+        <sys_class_name>catalog_ui_policy_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-15 11:22:35</sys_created_on>
+        <sys_id>932b1c48c3449b106346fbfdd4013147</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>manager</sys_name>
+        <sys_package display_value="Licensed Software Installation Automation" source="x_2052380_licens_0">259973e3c3b70b106346fbfdd40131ae</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_update_name>catalog_ui_policy_action_932b1c48c3449b106346fbfdd4013147</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-15 11:22:35</sys_updated_on>
+        <table/>
+        <ui_policy display_value="Make Manager Read Only">fdfa5448c3449b106346fbfdd4013145</ui_policy>
+        <value/>
+        <value_action>ignore</value_action>
+        <variable>manager</variable>
+        <variable_set/>
+        <visible>true</visible>
+    </catalog_ui_policy_action>
+    <sys_translated_text action="delete_multiple" query="documentkey=932b1c48c3449b106346fbfdd4013147"/>
+</record_update>
