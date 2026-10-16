@@ -1,0 +1,1321 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <allow_high_security_roles>false</allow_high_security_roles>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=21025000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>29000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Automates manager approval, software-owner approval, IT fulfillment, and notifications for licensed software installation requests.</description>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>licensed_software_installation_approval_flow</internal_name>
+        <label_cache>[{"name":"6347501a-e54d-46c0-a9dd-740a4e1314a3.approval_state","label":"5 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"usedInstances":{"a3e9c1cf-05b1-4f57-ae9b-daccfe912f13":["condition"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"8f3d870c-6e0b-40b5-8333-615a5aac8600.Catalog Task","label":"7 - Create Catalog Task➛Catalog Task","reference":"sc_task","reference_display":"Catalog Task","type":"document_id","base_type":"document_id","usedInstances":{"6f607eb9-7a32-42b8-9e26-39818ee7709a":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"45c81090-c133-47a7-abf9-5195d20b2a69.software.software_owner.manager","label":"1 - Get Catalog Variables➛software➛Software Owner➛Manager","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"sys_user","column_name":"manager","choices":[{"order":0.0}],"usedInstances":{}},{"name":"Service Catalog_1.request_item.requested_for.manager","label":"Trigger - Service Catalog➛Requested Item Record➛Requested for➛Manager","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"sys_user","column_name":"manager","usedInstances":{"2347a896-776c-49db-a836-1f0cfd1f8796":["record"]}},{"name":"64489ef9-0508-4fae-b73b-5416df3eb08e.Record.software_owner","label":"4 - Look Up Record➛Software Inventory Record➛Software Owner","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"x_2052380_licens_0_software_inventory","column_name":"software_owner","usedInstances":{"6347501a-e54d-46c0-a9dd-740a4e1314a3":["approval_conditions"]}},{"name":"Service Catalog_1.request_item","label":"Trigger - Service Catalog➛Requested Item Record","reference":"sc_req_item","reference_display":"Requested Item","type":"reference","base_type":"reference","usedInstances":{"2347a896-776c-49db-a836-1f0cfd1f8796":["record"],"d3652848-d80b-458b-8c4e-c5a01ab9ddbd":["record"],"45c81090-c133-47a7-abf9-5195d20b2a69":["requested_item"],"6347501a-e54d-46c0-a9dd-740a4e1314a3":["record"],"8f3d870c-6e0b-40b5-8333-615a5aac8600":["ah_requested_item"],"5305c35d-2741-4116-b751-bbc39441bea7":["record"],"6f607eb9-7a32-42b8-9e26-39818ee7709a":["record"],"728bca1e-159d-4d4e-9570-bcd0e5d7667a":["record"],"e3c1802b-92e7-4874-ae27-57dc2f6df195":["record"]},"attributes":{"default_search_field":"number"}},{"name":"64489ef9-0508-4fae-b73b-5416df3eb08e.Record","label":"4 - Look Up Record➛Software Inventory Record","reference":"x_2052380_licens_0_software_inventory","reference_display":"Software Inventory","type":"reference","base_type":"reference","usedInstances":{"6347501a-e54d-46c0-a9dd-740a4e1314a3":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"45c81090-c133-47a7-abf9-5195d20b2a69.software","label":"1 - Get Catalog Variables➛software","reference":"x_2052380_licens_0_software_inventory","reference_display":"Software Inventory","type":"reference","base_type":"reference","usedInstances":{},"attributes":{"catalogType":"8","catalogTypeLabel":"Reference"}},{"name":"2347a896-776c-49db-a836-1f0cfd1f8796.approval_state","label":"2 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"usedInstances":{},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"45c81090-c133-47a7-abf9-5195d20b2a69.manager","label":"1 - Get Catalog Variables➛manager","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","column_name":"","usedInstances":{"2347a896-776c-49db-a836-1f0cfd1f8796":["approval_conditions"]},"attributes":{"catalogType":"8","catalogTypeLabel":"Reference"}},{"name":"45c81090-c133-47a7-abf9-5195d20b2a69.software.sys_id","label":"1 - Get Catalog Variables➛software➛Sys ID","reference":"","reference_display":"Sys ID","type":"GUID","base_type":"GUID","parent_table_name":"x_2052380_licens_0_software_inventory","column_name":"sys_id","usedInstances":{"64489ef9-0508-4fae-b73b-5416df3eb08e":[null]}}]</label_cache>
+        <master_snapshot>008eec90c3c01f106346fbfdd40131f7</master_snapshot>
+        <master_snapshot_digest/>
+        <name>Licensed Software Installation Approval Flow</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id>608e20d0c3c01f106346fbfdd40131be</remote_trigger_id>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 05:40:34</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>f4961054c3001f106346fbfdd401314e</sys_id>
+        <sys_mod_count>65</sys_mod_count>
+        <sys_name>Licensed Software Installation Approval Flow</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Licensed Software Installation Automation" source="x_2052380_licens_0">259973e3c3b70b106346fbfdd40131ae</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_update_name>sys_hub_flow_f4961054c3001f106346fbfdd401314e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 11:31:07</sys_updated_on>
+        <type>flow</type>
+        <updation_source/>
+        <version>2</version>
+        <version_record>d9d62d94c3481f106346fbfdd4013191</version_record>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=f4961054c3001f106346fbfdd401314e"/>
+    <sys_variable_value action="delete_multiple" query="document_key=f4961054c3001f106346fbfdd401314e"/>
+    <sys_flow_catalog_trigger action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <catalog_item/>
+        <name/>
+        <published_version/>
+        <run_flow_in/>
+        <sys_class_name>sys_flow_catalog_trigger</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 07:25:08</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>608e20d0c3c01f106346fbfdd40131be</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 11:31:07</sys_updated_on>
+        <trigger_definition/>
+    </sys_flow_catalog_trigger>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=f4961054c3001f106346fbfdd401314e"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=f4961054c3001f106346fbfdd401314e"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=f4961054c3001f106346fbfdd401314e^sys_idNOT IN3c961054c3001f106346fbfdd401314f"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>f4961054c3001f106346fbfdd401314e</id>
+        <name>Licensed Software Installation Approval Flow</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 05:40:34</sys_created_on>
+        <sys_id>3c961054c3001f106346fbfdd401314f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 05:40:34</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=3c961054c3001f106346fbfdd401314f"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=f4961054c3001f106346fbfdd401314e^sys_idNOT IN45271494c3001f106346fbfdd4013101,4527d094c3001f106346fbfdd40131c7"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name,uiTypeLabel=Table Name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value>sc_req_item</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Licensed Software Installation Approval Flow">f4961054c3001f106346fbfdd401314e</model>
+        <model_id>f4961054c3001f106346fbfdd401314e</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_f4961054c3001f106346fbfdd401314e</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 05:43:02</sys_created_on>
+        <sys_id>45271494c3001f106346fbfdd4013101</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 11:30:58</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=45271494c3001f106346fbfdd4013101"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>default_search_field=number,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>request_item</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Request Item</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Licensed Software Installation Approval Flow">f4961054c3001f106346fbfdd401314e</model>
+        <model_id>f4961054c3001f106346fbfdd401314e</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_f4961054c3001f106346fbfdd401314e</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference display_value="" name="sc_req_item">sc_req_item</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 05:43:02</sys_created_on>
+        <sys_id>4527d094c3001f106346fbfdd40131c7</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 07:25:00</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=4527d094c3001f106346fbfdd40131c7"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=f4961054c3001f106346fbfdd401314e"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=f4961054c3001f106346fbfdd401314e"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=f4961054c3001f106346fbfdd401314e^sys_idNOT INa827d094c3001f106346fbfdd401318b"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Licensed Software Installation Approval Flow">f4961054c3001f106346fbfdd401314e</flow>
+        <generation_source/>
+        <name>Service Catalog</name>
+        <published_version/>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 05:43:00</sys_created_on>
+        <sys_id>a827d094c3001f106346fbfdd401318b</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 11:30:58</sys_updated_on>
+        <trigger_definition display_value="Service Catalog">c43a1011c36813002841b63b12d3ae15</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/61T32vbMBD+V4KeNvDATtZm8dsYFALdCk3Xl1KMIp0SMVlyJdmtF/q/7y62k7TzxqB70/38vrv7dLdjhq/BsJxd13ZyYdzjZGlZwrSN4C03N20FGBRbpwWgv3tc6hBZfrdjagUPNVgM5R+yhKlbbmrKX3PxY+NdbSXWqMsTCEUQ2k6OGZN3EhSvTXxPucuSb6gDvVdgQESQLFfcBEDP93BqfdUhaLvpHc/Jn/ko5+HvfF5mvIHFfcJKbiWPzrfHJO/KGygrwyMcnM5L8CzP0jRhDRFdtWEpO1TLS8L3tS2IYaHpKE0/DT6lDtisvT16xFYb6cHiXZBCxT12iNR/9yqkCeI8XaRiPl3M59N0NktTdbZWQgkx/5Sl59nZAhuOC2OUWHylktPJ4CmClScL+307Hri8subo2KL8uqlK/hT0T2z+MaU8Bb67LsUOZtFvY1gEsQh7fZp/V14zJt1+kJS0NdbrhWqaMbENqyBd9Ghf/j/B7M0Ep0SwW91VFbVDsbAZnZavDdWENnQH9yCwpIhebzZYiEXO1KX9NqaLnv2JSuuA14KKFEEnHr7Hauser4dzXmi7p9QHjRPcHCweEXldR9rfjnHZcKwgRUePGM97VRQPNVXs/8mAVewnooQgvK7iZxF1A4dP+wt8tA/9CQUAAA==</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>service_catalog</trigger_type>
+        <updation_source/>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=f4961054c3001f106346fbfdd401314e^sys_idNOT IN0720acd4c3401f106346fbfdd4013199,0f67dc10c3ccdb106346fbfdd4013144,3361a098c3401f106346fbfdd4013138,50ba28d8c3801f106346fbfdd401319a,94af9c94c3401f106346fbfdd40131bc,a5552c10c3801f106346fbfdd4013124,a648ec54c3801f106346fbfdd4013163,cfb7ec14c3801f106346fbfdd40131b6,de9620d0c3801f106346fbfdd4013122"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Licensed Software Installation Approval Flow">f4961054c3001f106346fbfdd401314e</flow>
+        <generation_source/>
+        <order>4</order>
+        <parent_ui_id>d0fe2749-3f7d-47b6-8ded-545039427e91</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 06:22:30</sys_created_on>
+        <sys_id>0720acd4c3401f106346fbfdd4013199</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 11:30:59</sys_updated_on>
+        <ui_id>64489ef9-0508-4fae-b73b-5416df3eb08e</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/9VYW2/iOBT+K1GegXUIENK31VRIlXan0rQ7L93KcmKnWGvsjO3QUsR/3+NcgHIvZTSdR9vn8p1zvnNi52Huc+pf+TRGcRbH/WGEUBgiNBiEKQmSJBykCUpIz2/5kkwYSFqSCAbLKRGFW7/gLup3wyHCgqdMGoywUZl9JpphLqdMWqVnIE+5yQWZfa/V7moZ72ZNJh1zQTWT/tXDY8vPiQaXlmn/ar5xZGc5w4IkTICpe4fI++rgtU6O5o3ydnTOQbPEsjKtNHVYUMtnL5ZJysBVRoRhLX9CJCVlEM2OZoTeSrHaGHNpwaLvhF8MfwXzQ+TkMgZhpaw6Wy5xna9qOx0rSO5tbrmS1U4FtDpUopjIr1UALtMsI4WwTaZhpzBgj+UOswNRI8ruxur5W+NwxGUZXn0oVErEckWs1TwpLDOuFkywCRjCE5LnXD7hXKspL5UBy6TzJGDRyYR6BqeGP8kOSR3wDqSIdEawf11ufyeauyj+BjOgDIC4gGrjKulGFbrMyhSnojDlgSbSVLb8RZkr/KNwKKuo6/hwlSIQMKnmuf0TFKasDmXRagjfP0iReEWJVEnKnU+zxnozM5jTfwtQpvN5r58OAxSjdhqEYbsXkahNkixu94O4T7so6ZJB3Gm6olPpLhbbTXEhq+e10Zf1OE/N0U7lXYmrG+rNXt1QwcUaqofQL2opq4vP11HHeqQK+EijBPQgCeiq3kZpi6vMrXXKNsvPZuiIM0HfDPoTwDXKt45sXjLbh7cmaOZ8bEz87m8/8T8lPQEQxVW+uRRclh9cAHoZ3vYPUiMJNnhQln9tvrs9YtJt9hLPKu/1/Clb1rXh7wkgG8U7QOTdVyh3AG/ma2O+pm54MeqG3fdRF4jzMF+iX2ZtR4Kbe5UrXSP/6uTJpjywa00hWDwuqf/lPJ/Be312nc+N3gzf1ZzrzKpOrvcQ7MK3tj3N1vqZ3T0G1dofrpoVP3P6xOzKeyNFFdxjxH+7zmt2LXuoDO/DN8Dg4CMhWbsB8gxPoE48h2upZilQwWD3vMlUISmuL6Qr2ri6ZVwbWwtvz5BvzBZaegpazrNj5pXS3lL6EpPlhOgaxZvMa8KrMRjPvczK8LxleO9Lxp551LvgXe8j82hEuChTDw+LfK12TGul98ykI1U7UP4TB9aJoIKLgvr4RNvF952T7QjW3+KV+tGpkzKS9ODlFoVBgFCAaISGURQMB0k2IFEvWzUaxkamMBbBcgbEAPO4IUJTVbQ9WqrZePavFJi5f4xqE6fibZSvlXRP125kPQcY6uw1gI+HVM+LRCnBiFzRs//LBsZn+dtS8PvN3FRbf+0q2s/6mBf8H8l/FOzGkWLIUHcY0LQ9jIKo3cvooB1T0m+TOOlHIWVpLzv/+/z4P+H2oM+UFAAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=0720acd4c3401f106346fbfdd4013199"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Ask For Approval">f8f2e9920b10030085c083eb37673abd</action_type>
+        <action_type_parent display_value="Ask For Approval">bae0a1120b10030085c083eb37673a92</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Licensed Software Installation Approval Flow">f4961054c3001f106346fbfdd401314e</flow>
+        <generation_source/>
+        <order>2</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 05:44:16</sys_created_on>
+        <sys_id>0f67dc10c3ccdb106346fbfdd4013144</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 11:30:58</sys_updated_on>
+        <ui_id>2347a896-776c-49db-a836-1f0cfd1f8796</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1XUW/iOBD+K1GegXMICaFv1VWVerq9ldruvpQqMvYEfDIOtZN2e4j/vuM4gRS2FBVWuyf1JZLHHs/MN9+XTO6WvuD+mQ+DOIzwMcxCEvQDkkCcJGxEKEviOBqEfsdXdA54ki4WOn+kMtVATa5wAxel3flEFZ2C9poTnoaHUmjgXpZrTwoGyuDC5FnxRDV4QpmCSkkLkase3sOFWUj6/PVE17GZkFyD8s/u7jv+gmrMvwDtny23tornBaSSTkBi1JtCCzVF90NhaRzPmzSvG1xeBcwGxA3ThMo1t3n1Oz58K0BxwNAZlQY6/pwqTotcP68teAv/rOTGMBOqwNt8e/ibEf/h1UFM7MEMsEYGbnO9TGucnZnNckTy88Ki5iwFncjah+WynKt/XB22Q5DRUhZNh9BSGrwPFjZpm0WdUnYzy5+um4CXQlX11ZsyZ1SuV7RAFCZlAcY2phS3W9g4y9/b3QEJc4yYzhFdtKQWYlFFwaTnvanERS+T+RNmZ8RU9SireIFg0t4l2i8q81eqhS33E16DzjbcFyUeSriy3Y/7k3hEEt7lGZl0B0kYdSkD0oU4iCDiMYuC0F9V0KYPpS3KgVTDkTpE8YBhWiyKc0zhEerKV51aeSTI+jAa9ckkICQkJIkYSUKYhMN4GFKe/IBImQDJW8JrNnY11Np5nxwubSivYkDn4Hx3JHFZJ/xaIbUgqmWqXLCTiyIh5BepotDlMaL4OVx/i7eu4DfIy/aSAVqfjX/zUqs93E1nwlQtfZXDrROn4vIB6TfOf7n8t6m8XdYeJocfTP6NmTxM9lGBkU3LNTDsaIvCy+UN6EdE2fsT85T5NA16dlYBU6SigPlqtUvqd5P4ImelxdC7umhYfEDqjfd1k/t2LTVveX17KviGuGQ/cR0nDuFt2P9g7Ynfv9G+1mejTad5iZDQAtq8Hfsu07F/NvZVrmDsd8a+PZVaPlRmPIEZrjcq23Ll1qWmtXvQWm58OX021UnDZsBL6awvLI7Xtf2UOrmpA3gXmPUft6L10n8bs7XYSuf/QxibKb6pxOEm2q/86GSv/MH/dKD/eXN6up5tUSso8KMH8cFeXkCLBOuJhOWKC5uvacnKTb1gztXzl7vlchCxJCAj0mVBGHYHQzrs0kk26kbBKOIYrE/jUW/u/nVXq/tdCRx93/sEtPmfRXKbRjwHgLT+1tR+e0GrRbT5R66dagENTvXp+XUj0++poGPFMmF7Zw626bvDbiMPw1IcjqrBaJfr125sAu5duf33cffWxnwx6R+Q7wvn3fxrplbLrck+OOFk/0HS40l6/x3yTuST1hQAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=0f67dc10c3ccdb106346fbfdd4013144"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Ask For Approval">f8f2e9920b10030085c083eb37673abd</action_type>
+        <action_type_parent display_value="Ask For Approval">bae0a1120b10030085c083eb37673a92</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Licensed Software Installation Approval Flow">f4961054c3001f106346fbfdd401314e</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>d0fe2749-3f7d-47b6-8ded-545039427e91</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 06:28:00</sys_created_on>
+        <sys_id>3361a098c3401f106346fbfdd4013138</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 11:30:59</sys_updated_on>
+        <ui_id>6347501a-e54d-46c0-a9dd-740a4e1314a3</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1YbW/iOBD+KyifgXPIC4Fv1VWVerq7lUp3v5QqcpwJ+GQc1k7a5RD//caJAym0LGJZ9Xa1X5A8mZdnZp7xCw9rh6fO2BlG2QBGowFJXEI8QqKAkciDxBuGQ48y4nQdSReAmgpYrlJcP1FRGsF6PQH1xBl0fqcFFfksdvsKPpegi5gXsNhsUDnleino6pO1QQmbc5EqkM744bHrLKlC9wUoZ7ze+1SslhALmoBAw+uclQuQRef2Gn2cCr2xvmuw7+diYuA6td5jboT4yeAhXQe+FCBTwGgZFRq6zoLKlBa5WjnjQpUoUEDTD1KsthpzLos60QX9ovm/6N4bGL0MMDNmi7BdxrZATW1yrOeHZcFzWUsKmoimcLkoF/LvOgNTWshoKYpWaUuN/mBpIBsQNcJsMs+f75p4N1xWyVm0ImdUbFe0KBRPygK06QYIqGqyoMsll7N4qfInXhkjlEV/JnDRz0T+jDE1n8k+ZQZ3HwtE+zcov67En6jiJom/0A0ab6rk48+liVunYQHHVc51wqilmeLL4gp9PoFFuOla1ibsaOvZrtO1ux1pNYuRoxU/D9l5V7MX0s5t/f08rt6bmJ2qUd2T8b4wPsRviVotY1m7tjx1j/PUSk4hakTeh6gW0Q/G1K+RFPzQC/BnmHnEHbgkgjCK2IhQFoVh4Hu7JmM8REwFUpNq9L2j6yTPimeqoJM/S1CdRrFj9lmukKhZrjoCWyE1LnSjzaXGHVnQKstDnl/I63nTMcHOyVkzGScUqTG8amDeNVV6s3x2WnQTyk7K4GKT4oY/6KiU/H6vNrXkz/3ufJ+ZMuE+So7b7K3pfjhIwhGJ0l6akaTnR17QowxID0I3gCANWeB63zyHxD22+abRK0TKOIj2Vaf5cDhKrS/njcONCfXisDgB78FI3FjAbyViB6Ja7h0flxuKiJB3moqf96bDjpIBWofIP3mp5BHuxnOuq5a+yeGWxqW4fAL8xviPGv8+lffTOsJk7xeT/8dM9oOjVIBXdi+Wy5QbfLrF53rPA30lVx8f1uvQ96MRZKMeCUjU8zMKvWToJb3Ad8M0Q/94pejX779+c5OJq3vPZvN4OAsX9n7eHO1uOqUA3czSCQXcvnet3dGC2kna3Z6skZ0m/1LP3/cbpp/zXcGO8iAb7fqellgOWrTfv+upU4OcOuOpI3MJU6c7dYxWbAhRiVEDwW0/VLL1pl6Xilpzt7Xc2aZ0pStNzeaQIqUq6QtJzXMrv+SfRBMboHONqH+7561z6Os12/7TVNb2r5axeVg0mdR14+1TKLjYKeT/Gpu9p0O8vW7joYMb0Nmz9PgfmZvtYAAVAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=3361a098c3401f106346fbfdd4013138"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Licensed Software Installation Approval Flow">f4961054c3001f106346fbfdd401314e</flow>
+        <generation_source/>
+        <order>13</order>
+        <parent_ui_id>cc03a061-44ce-4ffa-b366-2f3ea62bb9d4</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 07:08:27</sys_created_on>
+        <sys_id>50ba28d8c3801f106346fbfdd401319a</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 07:25:03</sys_updated_on>
+        <ui_id>e3c1802b-92e7-4874-ae27-57dc2f6df195</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+2UXWvbMBSG/0rQtTF2nIY2d6Mh0Iu1kI7edMXI0kmiIUuuJKfNQv77jmQ5Tdu1C6UwBvOdjs/H+x496HZLBCcTMgKe5Wf5mBV5UQyzbHg6yqtxUeVDXlCAnCRE0Row0wDThuN5TWXrA9vtNZi1YDA4p45KvSzz1MB9C9aVwkG922EyF7aRdHMTazDCVkJyA4pMbu8S0lCD7R0YMtm++OU2DZSSViCxcKpZW4Nyg4sp9jhWel8977W/9OJn4JnH7qXwQfzl9eRZQuDRgeKA4xZUWkhITRWnTpsNmTjTYsAA5VdKbvYZK6Fc57Smj1b8xP6jzOctAK2xuIX9sYwb6pejcaFXjRNadRFHK9lvTsu2VpedBb9bWNBWuoPdthb7QeMlexGdwsX1Sj/M+3kzoYK7qFZqRuX+RJ0zomodWH8dICEspaZNI9SybIxei1CMUup0KfGQLqR+wJlWLFVKmded4oJoOsP4NIRvqBHexFdsg8W7YL68b/3czkYUXAbPwXAZLgpTLTOicV+w8RqizF0S2a1O3gOAnT3d90HPJ34tKxHXgOprUOcdyMAHF93/j2H7zQ8eXHaDjxX9rPgNExHcZ7HI7cmncXv6l7iNiv4xcP+EazZ89706uOlAqD1AFQWgBSq/t1lWIGo/gCGar6l9M++D9EKN3R0Muv7J0T76BjMBktvfGOvxjQPKdRywf3o/jeF8nIXv/wv8iS/w3S9I+sjJPwgAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=50ba28d8c3801f106346fbfdd401319a"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Get Catalog Variables">330ba3abc31013002841b63b12d3aee8</action_type>
+        <action_type_parent display_value="Get Catalog Variables">22f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Licensed Software Installation Approval Flow">f4961054c3001f106346fbfdd401314e</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 06:20:07</sys_created_on>
+        <sys_id>94af9c94c3401f106346fbfdd40131bc</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 11:30:58</sys_updated_on>
+        <ui_id>45c81090-c133-47a7-abf9-5195d20b2a69</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VU22rbQBD9FaFnYyTLcVy/9UIg0DYQl7yEsuxlZC9drZTdlR3X+N87K61sx0kcE5JS6KNWcznnzJy5XcdSxJOY5QmjGWU8S5M0S5LBeJiyUcbSgcgoAI17saYFYKSBuxqsA0GkgwLfF1TV/sd6PQWzkByiz9RRVc5I2g/BTehmg8FC2krR1U3IwRc+l0oY0PHk9mcvrqjBNg5MPFkf/HKrCoiiDBQmXkMO+IcDVjiVQJc7rVkhHTKIrlt4R8j5ps37rl1phIeX9GK4d6AFYPucKgu9uKBaUFeaVTxxpsYHA1RcabXaRsyldi3vgt5b+RuLZ4PeXv1JbDlBGB2A7R8SpGvIB5TRZRvE5yXqflU5Weq2uqNMdQKXqi7095agHwHktFZubwS1xepQeS4eXYCaT+flcqvzhdQN7fBTlZyq7Rd1zkhWO7B+bKCgwEKkoFUl9YxUplzIJhmxFP2Zwo9+rsolNrVypvuUe+B9lI72L/D9S/N8Q430LL5hGUxG4VFIIkxZVYGc1zjeNBqRu9rjafkFJqQVAwMsN7JyH7HNAgLoTa/bfHZscfJ0txyoNQ7AAeFhvw8MAOfibJyME57x5ANLk1E2HOUsF2KIhdPs7PH6f8WpaYtznJa5W1ID0aW2WBu7oCB76/lWJnmZa5f7I5DtzNysmo1wwaNuMNEUnH1ZnuctlL6bhRyxK/sAiCVYmCwCdGJb6E+562XC/4fdpMU7VJQ40IYd2Re4cR76CiGjlNTw+e5xjv2IqbWTBZDGG0RqUlZ2IWH5Vq49P77J57u17JagG73dc6zI2Sjh/BnHwnjiNwehe72IhmWPMYEO58OnEwQ9THhs+b/R8nXXYqpqO48+1fwXuO5gnCBzl97Z5mZP5yMjCFfB+qas6xnuwuD4XQgvpxyGdJAkycPb8Izr/zlbo/1yPKcow043nC80osRNCjZ9L/OfZGJcEs1VjZEFSiENdtlC9ZdyG+al2QMBhixN22kbUhnMMQt/mRVw15DsrkxZGx6uEL4e7vtrT8nPPxWaP0r8CgAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=94af9c94c3401f106346fbfdd40131bc"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Catalog Task">af51fd0e73141300612c273ffff6a785</action_type>
+        <action_type_parent display_value="Create Catalog Task">f597c41073081300612c273ffff6a767</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Licensed Software Installation Approval Flow">f4961054c3001f106346fbfdd401314e</flow>
+        <generation_source/>
+        <order>7</order>
+        <parent_ui_id>a3e9c1cf-05b1-4f57-ae9b-daccfe912f13</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 06:45:03</sys_created_on>
+        <sys_id>a5552c10c3801f106346fbfdd4013124</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 11:30:59</sys_updated_on>
+        <ui_id>8f3d870c-6e0b-40b5-8333-615a5aac8600</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1YXU/bMBT9K1GeNinq+gEt4m0bQuJhTBqIPUxT5CY3jYVjB9tpxyr++64TO01ICRUUJMR4Itcf99zjc5zb/Fr7NPaPfZIcjpJ4CLPJ6GA0GQ6no3E0nk0S/JuS2dGRH/icZGBmpqEmcwZh+Rz4S8IKE1cRxtU1RmKqckZurzoDUUpZLIH7x79+B35OJO6gQfrH63tD+jaHkJE5MFx/abJ551W2XcFuXfxABSYbhlsxIWMDbBj48EcDjwHzJoQpCPyM8JhoIW/riAQSf+dsE0gp17ijbyb/UfQvbn80NPMSwBojqMbqx9AyVoWjVNAIvueaCl5FSmR2ULAi4+dVIYZrSEjBdJdrO3Dy0FkUCtNCbkozWC3w5CIVqx8O1ynlJQt2kImIsPqJaC3pvNCgzPkBgww3CjOS55QvwlyKJS0XI+RssGD4MEiYWGFSRRd8QCJT3wCZJINTjJ+U4SsiqSn2G26DizELM2tK2BhW5phkUQpBYVTS3HFTovLvSlbDm8IArfixJYYVmTihWvYZ8y/BVnMXWBvMJn3KIsOWiCTcFKA0xCHVkDWssF5fgFziIXpfsTwmFuFoYCeXU+/uui55sj3q03Lu2KGGzVpbgXdWVdBTnHWJbKSzJhn1m8Qc2G4emYzbHsFjRxgOwDa7dAp4jnnejisEEhnGUuS5La40xXPFP5n1Cmfa0odKhdQGdrmhYXuj/zOuUPbMQ7hYMB4OwzPhCv9RItErIsET3KsV5sVgzNL1xJP3eZqTLvDo+MLZaAc26oWGC++kxUU/U9ZMymW0Thrv7XUzGg+Hr/LGeSumefaboV8OUevIEwosVg1H7PG+v4QM99HgVTsFO8NzG5w6cFvwulbI5giXNofV52Rv+pwedvS56U22ydS+Sb1L10ruU7LVK+qNKZbyvNBq0O5mH1Fx0iuT+bilihWhuqHhUVfEthd7opBx8afTsm0LdkbnFv+ssHXAWgHPhWBA+Ea5B3tT7sGrXKuW2e1dvB18F/fuI5po/DCtL63INt33uvKX7Ll3QNm5v92N1m69H6ri4fb7cG/S3tJ/I4q+/vteDe+hkUC5puYnKRAZpftqvWfzXv00Pl44WSwtqhfqMi5YoVLvSxFdg657jMdBuuVOF1cNlD0FuHbYJJ27nFbe0/898dp87UjwVkAaNryFHKAkxX77CF5O8KKQyI8jwNwHoSiZQQwr30kbh1bJBt+Hj0Y4PGJFDGGG9FCJmeth0I2vOYauBjCQ4UpW2Z9psN//APJGxUPhFAAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=a5552c10c3801f106346fbfdd4013124"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Licensed Software Installation Approval Flow">f4961054c3001f106346fbfdd401314e</flow>
+        <generation_source/>
+        <order>9</order>
+        <parent_ui_id>a3e9c1cf-05b1-4f57-ae9b-daccfe912f13</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 06:57:58</sys_created_on>
+        <sys_id>a648ec54c3801f106346fbfdd4013163</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 11:30:59</sys_updated_on>
+        <ui_id>728bca1e-159d-4d4e-9570-bcd0e5d7667a</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1UXWvbMBT9K0bPxthxGtq8jYZAH9ZCOvrStebaukkEsuzKctos5L/vypLTtN26EAJjML/dq/txztGx7jdMcDZmQ+RxcpGMijRJ00EcD86HST5K82TAU0BMWMgUlEiVGotKc4pXIFub2GxuUa9EgcElGJDVIksijU8tNiYTBsvtloq5aGoJ6zvfQ5liKSTXqNj4/iFkNWgab1Cz8ebdkVnXmEnIUVLjpCraEpUJriY041Doffesx/6ei91BMffTM2GTdGTxJHHI8MWg4kjr5iAbDFkJioOp9JqNjW4poRH4jZLrXcVSKOOYlvDSiB80fxjbujkStcKrsAszr1AvTkWC3tRGVMplDOSyV66SbamuHQWrLc6hlWZP27aheVhbyBaEQzi/XVbPs37fVKiOnUcrqwLkLgJjtMhbg429DpTYiVJCXQu1yGpdrUTXTFDKaCEpiOayeqadjVioCAqLOyKBIJpSftKl70ALS+IrjaHmbUc+e2rtXkfDA846zh3hrLsoKm0KLWrzhQav0MPcht67+dlnBiguXu97b+arf5siI7t2Vv1o1JkzMvLgyp0fZ9tvdnFw7RYfCvpN829IeOO+yXnfnp3Mt+d/ybce0T9m3D/ZNR58+l7t3XTn0GbfqgYMfm/jOOXpI6EhPiBd7CLkj1Sz8DVEspbkzo+2Pn7Qkf5HGkArAwcgPFiJfsBUoOTNL6TpfwC/IFv5BbvH+2R/QTKKu+//G37CN/zhJ/X68dKBCAAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=a648ec54c3801f106346fbfdd4013163"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Wait For Condition">89ce8a4187120010663ca1bb36cb0be3</action_type>
+        <action_type_parent display_value="Wait For Condition">8bb9a8160b10030085c083eb37673aec</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Licensed Software Installation Approval Flow">f4961054c3001f106346fbfdd401314e</flow>
+        <generation_source/>
+        <order>8</order>
+        <parent_ui_id>a3e9c1cf-05b1-4f57-ae9b-daccfe912f13</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 06:55:32</sys_created_on>
+        <sys_id>cfb7ec14c3801f106346fbfdd40131b6</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 11:30:59</sys_updated_on>
+        <ui_id>6f607eb9-7a32-42b8-9e26-39818ee7709a</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+2XW2/bNhTHv0qg59AjRUqm8lbkggXYGsDxuoeuEA6pw0SoLLm6pM2CfPdRMhXLl7hG4qYbsEcd6Rz+z+WnI3188NLEO/FEpFGCYHLMfEoZDUOugSnFQ62oQuEdeznM0D5Zoi7KxF7fQda0hocHaXgix1STEKkigqqASM45CVkAAYCWIaWjU6ghK26OplB9fny0/klazTO4/+DCWIu+TbOkxNw7+fjp2JtDaU+ssfROHtZu1fdzjDNQmFnHs0I3M8zro8szG2PfbHrvSZ/OenrtGfY6cdHjtDXaW60eduzhtxrzBO1pBrIKj70Z5AnURXnvndRlYw0lQnKVZ/dPT9ymeb1IdAbfqvRvG5777XMGbWbaFeHpMnYF6mtTpBqv5nVa5AtLDSrrC1dkzSx/v8igLS0aaLJ6UNqmsvFw3kpuRSwUmuvb4uukP+8izbvknNqs0JA9XUFdl6lqaqzabjTpdFt1FubftvbFpJltZdyJjquiKbt8J+enV5Oz+M9309Nfzyfx5Px6Ork8nZ63HphhF3oG83ma38TzsrhLO4U239noJrMXI5MVX21iVXqTj0C3xRnZLsDowtrPOvMHKNP20N9tGOvcqvwjT780eNlNijGMszAkjFFOBFMhiSQGhGIAIvBFGIS+99h1Jf7StAVZ1NdVMu6asUiqGyD7aKXLdF6/s2Lu0NXv8bjHLNg5mLCcw0HMJWqVtgWsPm/CM4TrxSBN2yOP3i+O3FfuivMz8h1KKzZHkr+bJGfZByVJfw5KTtHrWVopzypKq52p4sWIOdFd1LfixWcykkJxwpUIiIiMIZJKQQQC1YGfjAXT3+Xlu5Tsfn2b5ZjpIk/SNotqSEkNNf7VUMoTvonK2t2XoXI6PHdfzVudtyXieFmxOV74oTaPoPQnAXOo3bNSnlVeVir8JlxgIkMVUEnQSEkEH0sSMd8nYQgJY0Inhh5yj9Bk17SZwedanc6waOrYZHAzYIRugtG/R164PGxXf7lwIfbV2Duf590Lzml9VrzjQhVFhpAvoRAHWyLiv75ElrVZ2yDD9rwJEVqDtCsBSMQ1EhEqTaTRhnBUgeGBkmpMX70p9O4ZizZHKWlK6Hq2ZOGQ/yLL6Pvq2+L6vGRHQNehod2BEPwPQg/CRonWfk6WN34UDbfW7wzuq7aTlr5NPpDBOFDt/wYQ4UeMQCR8EoU4RmFkyCF6NR+S7Zw/szlslb7FpMnwx/Dx1NIekD0E9r7XS2XPa3aAlINzHBvhAf801j+d9CwfithGykD9v5SYYc1WYRl27W12h+8znqAmLLGfVMIPfSK5GJNxJBUVdi4Uxxez8ekfoDCr8vQSAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=cfb7ec14c3801f106346fbfdd40131b6"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Licensed Software Installation Approval Flow">f4961054c3001f106346fbfdd401314e</flow>
+        <generation_source/>
+        <order>11</order>
+        <parent_ui_id>ad5a3bd3-884b-4046-b28e-fdaa90e6081d</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 06:50:34</sys_created_on>
+        <sys_id>de9620d0c3801f106346fbfdd4013122</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 07:25:03</sys_updated_on>
+        <ui_id>5305c35d-2741-4116-b751-bbc39441bea7</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+2UXWvbMBSG/0rQtTF2nIY2d6Mh0Iu1kI7edMXI0kmiIUuuJKfNQv77jmQ5Tdu1C6UwBvOdjs/H+x496HZLBCcTMgKe5Wf5mBV5UQyzbHg6yqtxUeVDXlCAnCRE0Row0wDThuN5TWXrA9vtNZi1YDA4p45KvSzz1MB9C9aVwkG922EyF7aRdHMTazDCVkJyA4pMbu8S0lCD7R0YMtm++OU2DZSSViCxcKpZW4Nyg4sp9jhWel8977W/9OJn4JnH7qXwQfzl9eRZQuDRgeKA4xZUWkhITRWnTpsNmTjTYsAA5VdKbvYZK6Fc57Smj1b8xP6jzOctAK2xuIX9sYwb6pejcaFXjRNadRFHK9lvTsu2VpedBb9bWNBWuoPdthb7QeMlexGdwsX1Sj/M+3kzoYK7qFZqRuX+RJ0zomodWH8dICEspaZNI9SybIxei1CMUup0KfGQLqR+wJlWLFVKmded4oJoOsP4NIRvqBHexFdsg8W7YL68b/3czkYUXAbPwXAZLgpTLTOicV+w8RqizF0S2a1O3gOAnT3d90HPJ34tKxHXgOprUOcdyMAHF93/j2H7zQ8eXHaDjxX9rPgNExHcZ7HI7cmncXv6l7iNiv4xcP+EazZ89706uOlAqD1AFQWgBSq/t1lWIGo/gCGar6l9M++D9EKN3R0Muv7J0T76BjMBktvfGOvxjQPKdRywf3o/jeF8nIXv/wv8iS/w3S9I+sjJPwgAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=de9620d0c3801f106346fbfdd4013122"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=f4961054c3001f106346fbfdd401314e"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=f4961054c3001f106346fbfdd401314e^sys_idNOT IN4c866890c3801f106346fbfdd40131cc,7d9a64d8c3801f106346fbfdd4013164,9569a418c3801f106346fbfdd40131b4,98e32c18c3401f106346fbfdd40131a7"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">137eec90c3c01f106346fbfdd4013142</block>
+        <comment/>
+        <connected_to>a3e9c1cf-05b1-4f57-ae9b-daccfe912f13</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Licensed Software Installation Approval Flow">f4961054c3001f106346fbfdd401314e</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>10</order>
+        <outputs_assigned/>
+        <parent_ui_id>d0fe2749-3f7d-47b6-8ded-545039427e91</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 06:50:09</sys_created_on>
+        <sys_id>4c866890c3801f106346fbfdd40131cc</sys_id>
+        <sys_mod_count>17</sys_mod_count>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 11:30:59</sys_updated_on>
+        <ui_id>ad5a3bd3-884b-4046-b28e-fdaa90e6081d</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">9f7eec90c3c01f106346fbfdd4013144</block>
+        <comment/>
+        <connected_to>d0fe2749-3f7d-47b6-8ded-545039427e91</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Licensed Software Installation Approval Flow">f4961054c3001f106346fbfdd401314e</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>12</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 07:08:01</sys_created_on>
+        <sys_id>7d9a64d8c3801f106346fbfdd4013164</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 11:30:59</sys_updated_on>
+        <ui_id>cc03a061-44ce-4ffa-b366-2f3ea62bb9d4</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">d77eec90c3c01f106346fbfdd4013133</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Licensed Software Installation Approval Flow">f4961054c3001f106346fbfdd401314e</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 07:02:48</sys_created_on>
+        <sys_id>9569a418c3801f106346fbfdd40131b4</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 11:30:59</sys_updated_on>
+        <ui_id>d0fe2749-3f7d-47b6-8ded-545039427e91</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1V32vbMBD+V4aekyDZjhPnrWwUCu0Ka+nLVsxZPxIxRfIkuW0W8r/vZDttGQ0bo497s7473X3f6T68J66LbRfDrTsLQa8tWX29nxBtE4bfe6KMe7x0a80vbIhgubzZhQtBVqSalxUUbMnzJWWK0TIvStUoIQrKctYUZEIsbCVmcmeFjtrZugcm5AFMlwJXYGEt/YeztvXuQQoMCR1aA7u70xl8o43wcmTagseaUXqy2v8WirtW1gYaabDQTfTarvG6TtwVBcUqznielXlGabYsWFPmDctEDhJyzDte/Hgk/+GyR06rSv0QD8dOzotEi9EJkU9RWoH0VwpMkBOyBSsgOr97RrwEcW3NC7DRNmI5kpKfgv6JtbP5PCUqiRq5HILPx3oc3QDzjdNcXreJ4IBEaMx4hzvTbe3nQUcaulTQmXgcOiJdwHqyTaQTi5GSutm4xy/Hhufa9gLHoHEczPMJIo6h6aIM6WGkkVssVG+hbXE4dXpM3V9GLtvZ2uBhljYNm6YtnAFPxGc4I5idI/6ph+/A66TiCsvg5YFmA0Hzut9YLBc9Sjj0Y6l/dInQIHCUUg/TwITAvW7jGfZ5kCPrw+R91/3Vpu/3WV4sYFmV08Wi5NOiEs0Ulnk5ZYpyJZhaLqpyBv2ag6mxd5SHw7eO0lzASXu8V9n38FQFczVndP62p4ryLU+9PbQTRsr+YKT09H/pI0rpfyO9NpIO9WCIUVvf/J99dJ8Wf+gQhr0RkuuARG4TdnH8u6TADhcgue0FenT+e5Lwgh1+Af8Ex8inBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">5b7eec90c3c01f106346fbfdd401313a</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Licensed Software Installation Approval Flow">f4961054c3001f106346fbfdd401314e</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>6</order>
+        <outputs_assigned/>
+        <parent_ui_id>d0fe2749-3f7d-47b6-8ded-545039427e91</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 06:38:41</sys_created_on>
+        <sys_id>98e32c18c3401f106346fbfdd40131a7</sys_id>
+        <sys_mod_count>18</sys_mod_count>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 11:30:59</sys_updated_on>
+        <ui_id>a3e9c1cf-05b1-4f57-ae9b-daccfe912f13</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VTWsbMRD9K0Fn22i/nNi30BIIpA00IZc2LLPSrC0qS1tJG8c1/u8d7a7tEBJSio+9rd6MZt4bzWO3zLahaYO/t5feq4Vh8++PI6ZMxOh7y2pt1zd2ocS18QGMwLuNv5ZszmYXmKUiuRBZzpM64dMsn9ZVLSUdswTO2YgZWCFlCmukCsqasgNG7Al0GwN3tg5rcHh2uzbozi6bxtknlJQhlW80bB4+TBRLpaXDgXcDjjoEdGy+fRUKmwZLDRXqWC84ZRZ0XUUlNYc6mYlEZOk0SzlPL/KkmmZVksoMEDLK21/8tJdydtMh72uM/Qj3+07WyUgr4SOGzwGNJPrzGrTHEVuBkRCs2xwQhyBvjT4CS2UClWMx+dmr31Q7LYqYWCNpFNgHD8dymGAPi6VVAm+bSLBHAlR6uCOsblfma68jzh5raHXYz56Q1lM9bCLpyGKgVN8t7frbvuGVMp3AIaitAH04QaAxVG1AHx8GNa6oULmCpqHhlPExVXeZuKwmC02HSdw7ahp3cgIiEp/QjGByRfjnDn4Ap6KKL1SGLvc0K/BKlN3+UrngSMKuG0v5q42EeoGDlLKfBiV44VQTLqnPEw6sd6PTLv+Lvd9uKf+84AmMscjlOJ8KPoaZlOPznEOOVCKHbALdmoMuqXfA3e5Hy3km4V2XnKrsKTw1g6IuEl687al8+pan3h7aO0ZKPzBSfPq/9BHn/L+RXhpJ+bI3xKCta/7PPnqMi9938P3eSBTKE5H7iF3v/zUxsKEFiG47QmvrfkYJR2z3B7QN1P21BgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=f4961054c3001f106346fbfdd401314e"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=f4961054c3001f106346fbfdd401314e"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_variable_f4961054c3001f106346fbfdd401314e"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>request_item</element>
+        <help/>
+        <hint/>
+        <label>Request Item</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_f4961054c3001f106346fbfdd401314e</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 05:43:02</sys_created_on>
+        <sys_id>0127d094c3001f106346fbfdd40131fc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Licensed Software Installation Automation" source="x_2052380_licens_0">259973e3c3b70b106346fbfdd40131ae</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 05:43:02</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_f4961054c3001f106346fbfdd401314e</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 05:43:03</sys_created_on>
+        <sys_id>91271494c3001f106346fbfdd4013128</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Licensed Software Installation Automation" source="x_2052380_licens_0">259973e3c3b70b106346fbfdd40131ae</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 05:43:03</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_f4961054c3001f106346fbfdd401314e"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_f4961054c3001f106346fbfdd401314e"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <allow_high_security_roles>false</allow_high_security_roles>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>29000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Automates manager approval, software-owner approval, IT fulfillment, and notifications for licensed software installation requests.</description>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>licensed_software_installation_approval_flow</internal_name>
+        <label_cache>[{"name":"6347501a-e54d-46c0-a9dd-740a4e1314a3.approval_state","label":"5 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"usedInstances":{"a3e9c1cf-05b1-4f57-ae9b-daccfe912f13":["condition"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"8f3d870c-6e0b-40b5-8333-615a5aac8600.Catalog Task","label":"7 - Create Catalog Task➛Catalog Task","reference":"sc_task","reference_display":"Catalog Task","type":"document_id","base_type":"document_id","usedInstances":{"6f607eb9-7a32-42b8-9e26-39818ee7709a":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"45c81090-c133-47a7-abf9-5195d20b2a69.software.software_owner.manager","label":"1 - Get Catalog Variables➛software➛Software Owner➛Manager","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"sys_user","column_name":"manager","choices":[{"order":0.0}],"usedInstances":{}},{"name":"Service Catalog_1.request_item.requested_for.manager","label":"Trigger - Service Catalog➛Requested Item Record➛Requested for➛Manager","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"sys_user","column_name":"manager","usedInstances":{"2347a896-776c-49db-a836-1f0cfd1f8796":["record"]}},{"name":"64489ef9-0508-4fae-b73b-5416df3eb08e.Record.software_owner","label":"4 - Look Up Record➛Software Inventory Record➛Software Owner","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"x_2052380_licens_0_software_inventory","column_name":"software_owner","usedInstances":{"6347501a-e54d-46c0-a9dd-740a4e1314a3":["approval_conditions"]}},{"name":"Service Catalog_1.request_item","label":"Trigger - Service Catalog➛Requested Item Record","reference":"sc_req_item","reference_display":"Requested Item","type":"reference","base_type":"reference","usedInstances":{"2347a896-776c-49db-a836-1f0cfd1f8796":["record"],"d3652848-d80b-458b-8c4e-c5a01ab9ddbd":["record"],"45c81090-c133-47a7-abf9-5195d20b2a69":["requested_item"],"6347501a-e54d-46c0-a9dd-740a4e1314a3":["record"],"8f3d870c-6e0b-40b5-8333-615a5aac8600":["ah_requested_item"],"5305c35d-2741-4116-b751-bbc39441bea7":["record"],"6f607eb9-7a32-42b8-9e26-39818ee7709a":["record"],"728bca1e-159d-4d4e-9570-bcd0e5d7667a":["record"],"e3c1802b-92e7-4874-ae27-57dc2f6df195":["record"]},"attributes":{"default_search_field":"number"}},{"name":"64489ef9-0508-4fae-b73b-5416df3eb08e.Record","label":"4 - Look Up Record➛Software Inventory Record","reference":"x_2052380_licens_0_software_inventory","reference_display":"Software Inventory","type":"reference","base_type":"reference","usedInstances":{"6347501a-e54d-46c0-a9dd-740a4e1314a3":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"45c81090-c133-47a7-abf9-5195d20b2a69.software","label":"1 - Get Catalog Variables➛software","reference":"x_2052380_licens_0_software_inventory","reference_display":"Software Inventory","type":"reference","base_type":"reference","usedInstances":{},"attributes":{"catalogType":"8","catalogTypeLabel":"Reference"}},{"name":"2347a896-776c-49db-a836-1f0cfd1f8796.approval_state","label":"2 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"usedInstances":{},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"45c81090-c133-47a7-abf9-5195d20b2a69.manager","label":"1 - Get Catalog Variables➛manager","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","column_name":"","usedInstances":{"2347a896-776c-49db-a836-1f0cfd1f8796":["approval_conditions"]},"attributes":{"catalogType":"8","catalogTypeLabel":"Reference"}},{"name":"45c81090-c133-47a7-abf9-5195d20b2a69.software.sys_id","label":"1 - Get Catalog Variables➛software➛Sys ID","reference":"","reference_display":"Sys ID","type":"GUID","base_type":"GUID","parent_table_name":"x_2052380_licens_0_software_inventory","column_name":"sys_id","usedInstances":{"64489ef9-0508-4fae-b73b-5416df3eb08e":[null]}}]</label_cache>
+        <master>true</master>
+        <name>Licensed Software Installation Approval Flow</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Licensed Software Installation Approval Flow">f4961054c3001f106346fbfdd401314e</parent_flow>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 07:25:05</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>008eec90c3c01f106346fbfdd40131f7</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 11:31:05</sys_updated_on>
+        <type>flow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=008eec90c3c01f106346fbfdd40131f7"/>
+    <sys_variable_value action="delete_multiple" query="document_key=008eec90c3c01f106346fbfdd40131f7"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=008eec90c3c01f106346fbfdd40131f7"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=008eec90c3c01f106346fbfdd40131f7^sys_idNOT IN408eec90c3c01f106346fbfdd40131f8"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>008eec90c3c01f106346fbfdd40131f7</id>
+        <name>Licensed Software Installation Approval Flow</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 07:25:05</sys_created_on>
+        <sys_id>408eec90c3c01f106346fbfdd40131f8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 07:25:05</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=408eec90c3c01f106346fbfdd40131f8"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=008eec90c3c01f106346fbfdd40131f7^sys_idNOT IN888e20d0c3c01f106346fbfdd4013119,cc8eec90c3c01f106346fbfdd40131f9"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>default_search_field=number,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>request_item</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Request Item</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Licensed Software Installation Approval Flow">008eec90c3c01f106346fbfdd40131f7</model>
+        <model_id>008eec90c3c01f106346fbfdd40131f7</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_008eec90c3c01f106346fbfdd40131f7</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference display_value="" name="sc_req_item">sc_req_item</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 07:25:06</sys_created_on>
+        <sys_id>888e20d0c3c01f106346fbfdd4013119</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 11:31:04</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=888e20d0c3c01f106346fbfdd4013119"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value>sc_req_item</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Licensed Software Installation Approval Flow">008eec90c3c01f106346fbfdd40131f7</model>
+        <model_id>008eec90c3c01f106346fbfdd40131f7</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_008eec90c3c01f106346fbfdd40131f7</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>true</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 07:25:05</sys_created_on>
+        <sys_id>cc8eec90c3c01f106346fbfdd40131f9</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 11:31:04</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=cc8eec90c3c01f106346fbfdd40131f9"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=008eec90c3c01f106346fbfdd40131f7"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=008eec90c3c01f106346fbfdd40131f7"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=008eec90c3c01f106346fbfdd40131f7^sys_idNOT IN908e20d0c3c01f106346fbfdd401313f"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Licensed Software Installation Approval Flow">008eec90c3c01f106346fbfdd40131f7</flow>
+        <generation_source/>
+        <name>Service Catalog</name>
+        <published_version/>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 07:25:06</sys_created_on>
+        <sys_id>908e20d0c3c01f106346fbfdd401313f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 11:31:04</sys_updated_on>
+        <trigger_definition display_value="Service Catalog">c43a1011c36813002841b63b12d3ae15</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/61T32vbMBD+V4KeNvDATtZm8dsYFALdCk3Xl1KMIp0SMVlyJdmtF/q/7y62k7TzxqB70/38vrv7dLdjhq/BsJxd13ZyYdzjZGlZwrSN4C03N20FGBRbpwWgv3tc6hBZfrdjagUPNVgM5R+yhKlbbmrKX3PxY+NdbSXWqMsTCEUQ2k6OGZN3EhSvTXxPucuSb6gDvVdgQESQLFfcBEDP93BqfdUhaLvpHc/Jn/ko5+HvfF5mvIHFfcJKbiWPzrfHJO/KGygrwyMcnM5L8CzP0jRhDRFdtWEpO1TLS8L3tS2IYaHpKE0/DT6lDtisvT16xFYb6cHiXZBCxT12iNR/9yqkCeI8XaRiPl3M59N0NktTdbZWQgkx/5Sl59nZAhuOC2OUWHylktPJ4CmClScL+307Hri8subo2KL8uqlK/hT0T2z+MaU8Bb67LsUOZtFvY1gEsQh7fZp/V14zJt1+kJS0NdbrhWqaMbENqyBd9Ghf/j/B7M0Ep0SwW91VFbVDsbAZnZavDdWENnQH9yCwpIhebzZYiEXO1KX9NqaLnv2JSuuA14KKFEEnHr7Hauser4dzXmi7p9QHjRPcHCweEXldR9rfjnHZcKwgRUePGM97VRQPNVXs/8mAVewnooQgvK7iZxF1A4dP+wt8tA/9CQUAAA==</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>service_catalog</trigger_type>
+        <updation_source/>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=008eec90c3c01f106346fbfdd40131f7^sys_idNOT IN148e20d0c3c01f106346fbfdd401313b,148e20d0c3c01f106346fbfdd401313d,1c8e20d0c3c01f106346fbfdd4013135,1c8e20d0c3c01f106346fbfdd4013139,548e20d0c3c01f106346fbfdd4013137,988e20d0c3c01f106346fbfdd4013133,988e20d0c3c01f106346fbfdd401313c,9c8e20d0c3c01f106346fbfdd401313d,dc8e20d0c3c01f106346fbfdd4013137"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Wait For Condition">89ce8a4187120010663ca1bb36cb0be3</action_type>
+        <action_type_parent display_value="Wait For Condition">8bb9a8160b10030085c083eb37673aec</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>89ce8a4187120010663ca1bb36cb0be3</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Licensed Software Installation Approval Flow">008eec90c3c01f106346fbfdd40131f7</flow>
+        <generation_source/>
+        <order>8</order>
+        <parent_ui_id>a3e9c1cf-05b1-4f57-ae9b-daccfe912f13</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 07:25:06</sys_created_on>
+        <sys_id>148e20d0c3c01f106346fbfdd401313b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 07:25:06</sys_updated_on>
+        <ui_id>6f607eb9-7a32-42b8-9e26-39818ee7709a</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+2X227bOBCGXyXQtemlREqmclfYCTZAtgEcb/eiWwgjioyJ0pKrQ1qvkXdfSqIj+RA32ToBAuwlhwf983M+jfR57ajEOXdoyAUD6rKR62Hs4iAgHNw4JgGPcSyoM3BSWAizMhc8yxMzvgdd1YH1mkmSsBHmKBA4RhTHPmKEEBS4PvgAnAUYD8dQgs7uzmZQfH14MPsTVSw1rD7ZY0yEz5VOcpE655+/DJwl5OaJpcid8/XO1HMla4iFNkunG827OZSrZT1OMl4tRFpGahO8tjsndubsamJmzKZajjtwxI9SpIkwOiToQgycBaQJlFm+cs7LvDKBXEByk+rV44q5Sss2zwX8KNQ/5sHEq9dJYRLj1oPHYWT9acNyYuy7NSfzssof7coUF0VrSSIkVLoc92PtgptlqbK03VJCrDe7M10t0o+tIc7jAb3rqAojQizrPGvlbVrydp59n25EXqq0ccSmqDMO+nEEZZmruCprOWunUrNDZrfhw3ZLpc31R43oqMiqvDFpejG+mU6ivz7Mxr9fTKPpxe1sejWeXdQ7hBbN0QtYLlV6Fy3z7F41Ck2+i+GdNoOh1Nl3k1ih7tIh8Nqcobk6GF6a+KQJf4Jc1Q/9wxxjNtcq/0zVt0pcNYUnpUvcIECuiwmibhygkAkfYeED9T0a+IHnPAycYlWMNRRF57G53OhbVVvUOm69jZrradNsKrTezHO1LD8YeffCOvow2MDqH6186Aq9d2YHbMGNpcXXfQT7iL4cx5+L2uA4a6rwsEhL5F7sur/37GM7YXn0jvNoIx2QbSUf4JHhd8SjTevXgdzyepvHLbdVEbVVaUU3p74VdJ7LQkZjgkhMfURDKRHDjCIqAHPfS0bU5f8Bup+idrzJyK6KeZYmqs6r6KNWQin+rjAmCdnnbWf2pO1P9ngb96Udkmuh24tdHzrAQkdO1QQpxu8Ju1O1wS2zt6nbsvtN6BIJC2IfMyQkY4iSEUOh63koCCBxXcoTiV+3peHkWDXL3vdnqRYiq8pIarjrkYb38dq8n17G1TOUbLi6SJvXo1X0pERLV5xlWkC6289MOf12aZVatOgL+9kxtt4RWSdraJ3TO92s7/WbcMU5MNOeAIWEC0SDmCMmuURExL4kfsziEX6FrsWP13C4X6pJlUNzix1RJ/hFe4aODUuTTsDT0ixJzd3sxq/3D7I4+f/j9Es47dm988/WTbwWU3OzbwKroq4Kw/A+ZcKFkR/Xv2GAqBe6CELqoTAQI0ElCwiEr0AZc49Wt9wv5YLPRVJpcVrKnqFjQ9ltJ+BpaZayrtC3AZv24paw4GSEsb2PQb5I++IO8dbL6l1yJ28F5Hx+qYSu79P+iT1BY/9atkHsX8zbdDfPc0kiOHIT8+lIvcBDjNARGoUsxtSUXkzECbn78i/LdhD4rRQAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=148e20d0c3c01f106346fbfdd401313b"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Licensed Software Installation Approval Flow">008eec90c3c01f106346fbfdd40131f7</flow>
+        <generation_source/>
+        <order>11</order>
+        <parent_ui_id>ad5a3bd3-884b-4046-b28e-fdaa90e6081d</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 07:25:06</sys_created_on>
+        <sys_id>148e20d0c3c01f106346fbfdd401313d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 07:25:06</sys_updated_on>
+        <ui_id>5305c35d-2741-4116-b751-bbc39441bea7</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVXWvbMBT9K0HPxthxGtq8jYRAoWshGXnpipGl61RD/qgkp81C/vuuLdkxSdel0Jcwv90v6Zzjc+3HHRGcTMgIeBDehGMWhVE0DILh9ShMxlESDnlEAULikZxmgJ0KWKE4xhsqqzqx2y1BbQSDwZQaKot1HPoKXirQJhYGsv0em7nQpaTblZvBDHsWkivIyeTxySMlVXi8AUUmu6PSufgkTUBi66IFeAzYbMs65gWrMsgRXJu8c5MzVxnczrCCQzWcMPAIvBnIOSCQlEoNHslozqkp1JZMjKowoYDyh1xuu45nkRtLNKNvWvzGm0dB3ZcCMmNOhC6MnUA2nc5QySWezEylOr0K1FhbTTiktJJm2s/ZhofSiCK3I4Ymsp0uZJXl91YR0h3Qex+VRhBQ1jxr5JZWunwuXhctyLnIG0kcRVkwKruIGqNEUpkazo6AhEbjjJalyNdxqYqNaIYRSuavJQZ+KotXvFOLde5TVuP2UVXqzzE/a9IrqkRN4jseg8N7j+itnkqq9YEKahi/VDUSS8xRiBsVGgnixgn1MFOiNN/wqg044HvPbUBy9ZHD2M3BUL0zD1ugWYymbwx/aveFXQfgg1tb/5z5z4DWmv9H88rfh+r8f5K7688O7m3Buf/qy9x/fUnudzQu3v7/Mn0w/PCz2nNS43PdMzxCQlJU/qyCIELD/gKGBj/1/l/7PrcDZyBtd2AuQHL9DvR2ASBDgAZiS+VoCVxxsHLF7jfwZZsQjoPmuaB9+G/+Bk9/AN5GrWQRCQAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=148e20d0c3c01f106346fbfdd401313d"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Get Catalog Variables">330ba3abc31013002841b63b12d3aee8</action_type>
+        <action_type_parent display_value="Get Catalog Variables">22f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>330ba3abc31013002841b63b12d3aee8</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Licensed Software Installation Approval Flow">008eec90c3c01f106346fbfdd40131f7</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 07:25:06</sys_created_on>
+        <sys_id>1c8e20d0c3c01f106346fbfdd4013135</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 11:31:05</sys_updated_on>
+        <ui_id>45c81090-c133-47a7-abf9-5195d20b2a69</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/91Vy27bMBD8FYNnwZCs1HF9a1MECNAHEBe5FAXBxyomSlEqSdlxjfx7lxJlK07qJEAToD1queTOzu6Mvm2JkmROeJFyljMu8izN8jSdzE4yPs15NpE5A2AkIYaVgJkWfjbgPEiqPJQYXzHdhIPtdgF2pQSMzphnurqm2Tgmt6m3t5gslas121zFOxgRS6WlBUPm374npGYWy3iwZL49OHoqTs04aExdNLxUHoGOLjsUR3rwm7qLF4D1BMTQx/jU5SBeWRnQpQmBGw9GAsIqmHaQkJIZyXxlN2TubYMBC0x+MXqzy1gq47u2S3bj1C8smk+SQd05cYIivB7Y7oRG5lo0Ef3ooksqPiDhCywpfGN3tFY4CtdRJ6FgjfZnw1iX8KX2qjLdFc+47m9XuinN544tsntgMLbGISSoAwGhpdhfsVhW6x1b58q0XMVDXQmmB6nArFieK9BhsKYpOeYmhHlvFW98wLkloKHEArRkda3MNa1ttVLto4ixHF9r/BgXulojGKeuzZiJ0NAY58DG5xj/0IavmFWhu0/4TFulwqlQaau6jk2HgZHbhLiNO9PMuX3vOAL6swnIOyZiz7SjLVwRVtX+HRZeQWzvNul1xY/ta5HtdxJHifP1QEVUz4G84FS+maWzVOQifcuzdJqfTAteSHmCD2f5m/vi+ojzNQ7XZFEVfs0sjC6Mw7exClI0UMUzJfh4S70Ev8aeekdoF9aNUCajfiKjBXj3OAvPF2j2YgL1FJfkDkBH8WG6ii1R17X0kHYfJ+K/EHOo9VpSVg4Ns6xwZ9qe6XBWrapRodgITiVA3AeXWI/axnhVAm1VRpWhVe1WCtYv5winx+VzutdCv2H9XrmBG8iCT1Mh/uAGMJuHtcRmAoPUwDrhXKJ7iJOHL0h2eOG+nbxGyec50ROo7J2o193VgMsjNEe7cbpxS96IH+APDGcRTkbv+6PoOZPjnhMjTzGdbJKm6V3f+YOj/KuWcdccUMQF+j5yt58D7gS0TJL2ChZ9KQt5khXg0hmhG8wskQplscoOarDuXVqgZgACLF3brtIupbZ4x67Cr0KD8G2TvVdVjRXRyzB6qJG/Z0jffwNahzXG/AsAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=1c8e20d0c3c01f106346fbfdd4013135"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Catalog Task">af51fd0e73141300612c273ffff6a785</action_type>
+        <action_type_parent display_value="Create Catalog Task">f597c41073081300612c273ffff6a767</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>af51fd0e73141300612c273ffff6a785</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Licensed Software Installation Approval Flow">008eec90c3c01f106346fbfdd40131f7</flow>
+        <generation_source/>
+        <order>7</order>
+        <parent_ui_id>a3e9c1cf-05b1-4f57-ae9b-daccfe912f13</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 07:25:06</sys_created_on>
+        <sys_id>1c8e20d0c3c01f106346fbfdd4013139</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 07:25:06</sys_updated_on>
+        <ui_id>8f3d870c-6e0b-40b5-8333-615a5aac8600</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Y32/bNhD+VwQ9bYDh+UdiB3nbEhgosLVAXKQPRSHQ0skmSpEqSdnNjPzvO4qkLVmOYndKkGLzk3VHkd/dfR/J0+dtSJPwOiTp5TBNBjAdDy+G48FgMhzFo+k4xd+ETK+uwl7ISQZm5CrSZMEgKp974ZqwwthVjHb1FS0JVTkjD/cNR7yiLJHAw+vPX3phTiTOoEGG19sD16mQGFkAw6EfDaDgvQX0BE79kBtzw/bnsTmETAyuQS+E7xp4AggoJUxBL8wIT4gW8mFnkUCSD5yhQcsCn1eUa5wwNGO/K/o3Lns1MMNSwAhjsL7dY+TyZc3pLdFkjhPFupBuaLwSNAZlc5NASgqmb6o2O+BDrqng9pUyTPe2YEXG39ushLsJmuVxjtunylcoxAq5SYcJ0EWfzldic+eDmVFeZs45mYgJ2z0RrSVdFNrA3obAIMOJoozkOeXLKJdiTcuXEXLWXzJ86KdMbHBRRZe8T2ITXx+zT/oztN+W5nsiqQn2L5wGX8ZVmHmnhI1mZWqOZUEHVWiVNPe5KVGFj71QPagbRpTa5wiLE30rDHSbMRd0ZNNrXikn+h0RrcHF99hzWpqO24hLBjWOSvhWgNKQRFRDVtHTdjsHucayBjcYMBPLaNh3g8uhj49NqZ2tsROgeo3deaDBOwu0JQantT3j61K7q9id0obtSrPC2gvNjTiitPGorjTkAcLzwI6JrhHYq0uwC22lcyAyXs0oMFNYXmQLq4ZX0ZzAqkSJFHnugi4l1720xtNWvk5qtFQrIbUJpJzQ1GWvrndcoahYgAFgCrD2DKvHFf5RItUbIiEQPNgRO0jASLGpuB+e5zydnhC31+ncRB3c1qJuz4lTq0Ki8OWBVOfe6HQ6OvNEfFqow9Fg8HZPxZ/luHuB06udanGNTqnZblRFV12cSc8D8Fyf+eWPIPL3PcgQjYbIIjy48zlncO+cjuXjzlg+uWywfH+hOkZ2d9gHH+2QN0B8e/b+9LynPC+06tfbgme0kLZScTGqMW9DqK4oYdiUgruHnieHEzB4OXyyCBqQnBQWQjAg/FADCOq3WXkV3vH/ojP+X7zdLd5V43jX45z/0TPgGc5VvgbsttfYNSkHXUwH58EJYNjhfu530Xqr8hTY89uVy84EcqRfQXRt/cpBbG/ghPj33Yr96vI6vQpegTeRKtd/uUZlumglbeU7lefi2uHs+jb1PBCvHk+s+wqSFpC+bWCFWi2K+CvoA93MjSf4w7ucdCb/dxA/eHpQFaW4fWHu9nWIOECZSfc1q/dyshGFxKT6BJgNKhJlZhDDJvRyQNcm3eP75Vfz4Y3HrEggyjA9VOLKOzfoyvc5k64KMJDRRtrVO5fpl38AXOkELPgWAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=1c8e20d0c3c01f106346fbfdd4013139"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Licensed Software Installation Approval Flow">008eec90c3c01f106346fbfdd40131f7</flow>
+        <generation_source/>
+        <order>4</order>
+        <parent_ui_id>d0fe2749-3f7d-47b6-8ded-545039427e91</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 07:25:06</sys_created_on>
+        <sys_id>548e20d0c3c01f106346fbfdd4013137</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 11:31:05</sys_updated_on>
+        <ui_id>64489ef9-0508-4fae-b73b-5416df3eb08e</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VY32/iOBD+V6I8A+cQIKRvp1ZIlfa20ra3L7sry4mdYp1xsrFDfyD+9xvHDkRAgeio1OoePR7b38x838TOj5XPqX/l0xjFWRyPpxFCYYjQZBKmJEiScJImKCEjv+dLsmDgqUkiGAyXRFRm/IyHaDwMpwgLnjKpMMIqz/QTKRnmcsmkzssX8KdcFYK8fHfL7p2Pd9vySedc0JJJ/+rHr55fkBKO1Kz0r1Y7U+diFiRhAlwfHOidGPRLsRnies7avrSXeV/tRF5SAwX1fPasmaQMMGREKNbzF0RSUsfQWEpG6J0UW8OcSw07+sb5WfFXOHeKjF/GIKqU2bnNELt0WXN2QzS512WV6qp0ruk8h3wrmw/KMlIJfd22WYe7QvNc2iU2bLs6F9VCfrXp8DcbNNUBS6UABCtMoAa5CyO7n+dP3xqUMy7rnLhJkadEbEZE65InlTZ4Vj4TbAEb4QUpCi4fcVHmS14vBiyLwaOAwSAT+RMcqvijHJDUAB9AXslgBvab2vydlNxE8RdsA4sBEBfAEGxLqPKqrFO5xKmoVD1REqnsXv6656sXdS2IUtvIIeX4d2Vw2zy4iLFNmlmSlrzQf8IWS+aCW/ca2YyPUjDeUi7NJeUGhWppB9BgTn9WsJiuVqNxOg1QjPppEIb9UUSiPkmyuD8O4jEdomRIJvGg0dbArl2v96V1oV07ivF0JhoxXrdTcSg9TpZ7ti+HNnCyDC4myxFCn0mYcPjH02V3pdkUnJBbQI+SjG75pPJSY5vLlt72tdKZ52dAaHh+Z5jpJS9voXI0zzgT9NDXZ2Ymdr4+w//n1+dDkhwAUWyrx6Xgsr5KAND3Yv/4KPWSYIdnNb1a3xpjIyrd1wDxdO69dlbCGXAaJdzD2d6DxXMAYtPva8rs9vrG6AQQXkwA4fAyAlhtwtwk8kDOm9ujqWbj/2r8ya4/ULC1IFgfElinM4OuZw7X+wIOOym4TTY7c/MG5y58zXxDkb33bAFzWOrOw1a/+InTR6a3pzdeNIdrlvjn0LxjHG4KVYf3DlfW4OirKWldWXmGF1A5XsDNumQpkENh86rL8kpS7O7UWyKZSma8VNo57zeabwz0I70chOnpOfNqb2/j3fFDfDqOJpW3mdcE4k5Tnnl61oF4m0C6hd2laY0ueDm9dNOaES7qasBzqWiVk5VlXr7RuE4U8ggjzuxqZ4IKLgrqv7e9QxI42P5OYP0Ub+/Lt6aUkWQE79EoDAKEAkQjNI2iYDpJsgmJRtlWoxgrmUI3hZ0zoApsjxtqNHVG+/3HttSujeYMVA0Fb3Jpnt3DSHsGFtTXa2CdBu4aSpLnghG501Ee4Dvxx8zhd3wdf7iu8in+RFX8YTfT1nQw1+91b6j435L/rtitodiUoeE0oGl/GgVRf5TRST+mZNwncTKOQsrSUXbJq8CvfwG3nB3P9hUAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=548e20d0c3c01f106346fbfdd4013137"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Ask For Approval">f8f2e9920b10030085c083eb37673abd</action_type>
+        <action_type_parent display_value="Ask For Approval">bae0a1120b10030085c083eb37673a92</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f8f2e9920b10030085c083eb37673abd</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Licensed Software Installation Approval Flow">008eec90c3c01f106346fbfdd40131f7</flow>
+        <generation_source/>
+        <order>2</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 07:25:06</sys_created_on>
+        <sys_id>988e20d0c3c01f106346fbfdd4013133</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 11:31:05</sys_updated_on>
+        <ui_id>2347a896-776c-49db-a836-1f0cfd1f8796</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Y0W7iOBT9FZRnYBNCQuhbVVSpq50Zqe3MS6kiY9+AV8ahdtIOi/j3vYkdkoGWgS2V2lVfkHzvtX18fA62c7dyOHPOHOiHfoA/g8R3vZ7nRhBGER26hEZhGPR9p+1IMgesJIuFSh+JiBUQnUpMYCMvMl+IJFNQraqipeAh5wpYK0lVS3AKUmNDp0n2RBS0uNQZEYJkPJVdHIdxvRBk+eNEw9EZF0yBdM7u7tvOgijEn4FyzlZbqUMJEGQCAkvPK0DXFQMvUpMtF0VCZ4rLqW3/ZYe5qYKpYgWsXtuBnxlIBognIUJD25kTyUiWquUmgkOzb1LUgRmXGY7mFMU/Nf8H5/NCtyhMAJdIwSQ3zdjSbMLJiGQEkeQ0y5UtpbMUydWGHAYJyUV20YyZgm+LgmnTJSMTUfVORT6XXw0jzmaAalcxkmsEAYtipQV0u47kZpY+XVcoL7ksSbFJkVIiNi2SIXWTPCvwrJyc326xbCI7PIOAOc4Yz3GfMBIXm8XLWRD0vDsV2OgmIn1CdJpPZZfQUku4A6R7ifFRGf5BFC+W+wWHwc7FdN8lf8jhqtBR2JuEQzdiHZa4k04/8oMOoeB2IPQCCFhIA8931m1HL/WFIFrXROEOxQ95sUxDmyUoNhwXXajii+wcQT2C5WLdtv51vaQHw2HPnXiu67tuFFA38mHiD8KBT1j0jEgTDoI17Fsldp3YyBxnqgNQ7Zjq0sJ6Ca61VNmMy6JfbVX2b301iZNbK3Ldj+QtnPw11nobxxyvfkPBbyxA94oNGkfY32mu5B4HxDOuS2W86IRGxXGOOABk5Yg/DcptQ2yD/y9+8D/98P/3wyDaJzXq1pJSQFEYDSOsVjegHpH31gUiF+k09rrF7Qt0FvMM5uv1rjWOtsIB+CorXFcAtwFb8bOU5uXGcLal/pHNtK5Gtfzd/fI3IjlE/X7vU/vvUvs02KetZFhLieVIEsmgqf6xY7CPnbOxI1MJY6c9doqquNBWGcYKRLhJlLHV2rRzRWx3r9Gs+zKy1GWlpjNguTDRXyJxKX0bP4XbDmCkctsoh9bIULJLUvWiqXAaVvjOsXNjC8qR/rjlzeMnONnx0/9Ih89rHzpv936JNzd89Bf+TbzBA6W/V3/QENvmjkVTyXixAt0wp3kngD6Xy+93q1U/oJHnDt0O9Xy/0x+QQYdMkmEn8IYBw8l6JBx25+ZLwnp9v2ukV493nA0PoGFz6KF79O9osXasvzzYTk0r1t8rbNLasH+qY/CDXQLfpw9Pb7kJ3XvBorW2DJu1yTSN8bpXXvV2HXNtLoLAWlcmf5wDDkBVOeDWwtpCaTVfNp978ZTdtl483pFHjhH/s1r/VPq7Ufr9v5/j5mS/FgAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=988e20d0c3c01f106346fbfdd4013133"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Licensed Software Installation Approval Flow">008eec90c3c01f106346fbfdd40131f7</flow>
+        <generation_source/>
+        <order>9</order>
+        <parent_ui_id>a3e9c1cf-05b1-4f57-ae9b-daccfe912f13</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 07:25:06</sys_created_on>
+        <sys_id>988e20d0c3c01f106346fbfdd401313c</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 11:31:05</sys_updated_on>
+        <ui_id>728bca1e-159d-4d4e-9570-bcd0e5d7667a</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVXWviQBT9KzLPISTGSuvbogiFbgu6+NJtwyRzowOTSTozsXXF/743mYkGLa1d+iLr2/3MOSfnmsct4YyMyABYEN6EwzQKo6gfBP3rQZgMoyTss4gChMQjkuaAnQrSQjGM11RUdWK7nYNa8xR6Y2qoKJZx6Ct4qUCbmBvIdztsZlyXgm4WbgYz6YoLpkCS0eOTR0qqcL0BRUbbo9K5+ARNQGDrrAV4DNhsyjpmRVrlIBFcm7xzkxNX6d1OsIJDNZww8Ai8GZAMEEhGhQaP5FQyagq1ISOjKkwooOxBis2+Y8WlsURz+qb5H3zyIKj7MkBmqRNhH8ZOIJvOJqjkHDenplJ7vQrUWFtNGGS0EmbczdmGh9LwQtoRQxPRTheiyuW9VYTsF3TeR6URBJQ1zxq5pZXNV8XrrAU55bKRxFEURUrFPqLGKJ5UpoazJSCg0TinZcnlMi5VsebNMELJ/aXAwM9E8YrP1HwpfZrWuH1UlfpTzE+a9IIqXpP4iWtweOcRvdFjQbU+UEEN45eqRmKJOQpxo0IjQdw4oR5OFS/ND3zUGhzwnecuILn6yGHpzcFQnZ2HK9BpjKZvDH9q95k9B2C9W1v/mvnPgNaa/1fzyt+H6vx/krvrzvbubcG5/+rb3H99Se53NC7e/p+ZPuh/+LfacVLjc901vKEGfldBELHoGfEhQypsbCNgz9izdD1IuxTo8dPj+PdFX7uiM7i2VzTlIJh+h3x7QoAYEHVsxTg6I1fsLVxx/yH5tlsKh0Hzu6CL+m++J09/AWtrGnFTCQAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=988e20d0c3c01f106346fbfdd401313c"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Licensed Software Installation Approval Flow">008eec90c3c01f106346fbfdd40131f7</flow>
+        <generation_source/>
+        <order>13</order>
+        <parent_ui_id>cc03a061-44ce-4ffa-b366-2f3ea62bb9d4</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 07:25:06</sys_created_on>
+        <sys_id>9c8e20d0c3c01f106346fbfdd401313d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 07:25:06</sys_updated_on>
+        <ui_id>e3c1802b-92e7-4874-ae27-57dc2f6df195</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVXWvbMBT9K0HPxthxGtq8jYRAoWshGXnpipGl61RD/qgkp81C/vuuLdkxSdel0Jcwv90v6Zzjc+3HHRGcTMgIeBDehGMWhVE0DILh9ShMxlESDnlEAULikZxmgJ0KWKE4xhsqqzqx2y1BbQSDwZQaKot1HPoKXirQJhYGsv0em7nQpaTblZvBDHsWkivIyeTxySMlVXi8AUUmu6PSufgkTUBi66IFeAzYbMs65gWrMsgRXJu8c5MzVxnczrCCQzWcMPAIvBnIOSCQlEoNHslozqkp1JZMjKowoYDyh1xuu45nkRtLNKNvWvzGm0dB3ZcCMmNOhC6MnUA2nc5QySWezEylOr0K1FhbTTiktJJm2s/ZhofSiCK3I4Ymsp0uZJXl91YR0h3Qex+VRhBQ1jxr5JZWunwuXhctyLnIG0kcRVkwKruIGqNEUpkazo6AhEbjjJalyNdxqYqNaIYRSuavJQZ+KotXvFOLde5TVuP2UVXqzzE/a9IrqkRN4jseg8N7j+itnkqq9YEKahi/VDUSS8xRiBsVGgnixgn1MFOiNN/wqg044HvPbUBy9ZHD2M3BUL0zD1ugWYymbwx/aveFXQfgg1tb/5z5z4DWmv9H88rfh+r8f5K7688O7m3Buf/qy9x/fUnudzQu3v7/Mn0w/PCz2nNS43PdMzxCQlJU/qyCIELD/gKGBj/1/l/7PrcDZyBtd2AuQHL9DvR2ASBDgAZiS+VoCVxxsHLF7jfwZZsQjoPmuaB9+G/+Bk9/AN5GrWQRCQAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=9c8e20d0c3c01f106346fbfdd401313d"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Ask For Approval">f8f2e9920b10030085c083eb37673abd</action_type>
+        <action_type_parent display_value="Ask For Approval">bae0a1120b10030085c083eb37673a92</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f8f2e9920b10030085c083eb37673abd</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Licensed Software Installation Approval Flow">008eec90c3c01f106346fbfdd40131f7</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>d0fe2749-3f7d-47b6-8ded-545039427e91</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 07:25:06</sys_created_on>
+        <sys_id>dc8e20d0c3c01f106346fbfdd4013137</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 07:25:06</sys_updated_on>
+        <ui_id>6347501a-e54d-46c0-a9dd-740a4e1314a3</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1YXW/iOBT9KyjPwCbkg8BbVVSpq/mQSmdeShU5zg14ZRzGTtphEf99bmKHZKBlYMU8dDsvSL6+1zn3cE5s52FjscQaW8MwHcBoNLBjx7Zd2w59aocuxO4wGLqE2lbXEmQJmCmBZjLB8RPhRRnYbKYgnxiFzjXJCc/mkdOX8K0AlUcsh+V2i8kJUytO1l9NDUbogvFEgrDGD49da0UkLp+DtMabvalT8XESA8fUuxrgPuB8vSrHSUaLJQgEVwc/mMqJmencTnAGi0o4dteC7zmIBBBHSriCrrUkIiF5JtfWOJcFBiSQ5LPg613Ggolc97kk3xX7Fx/sDsq8FLAxajjYDSPDjw6nEyRyiivTvJA7ujKkWGlKEkhJwfPrdkwnfF7lLBO6JCcxr6szXizFJ02ItVug9XcUCkHAquyzRK7bSqeL7PmuBnnDRMWIaZFnlPDdiOS5ZHGRl3A2FnCoKF6S1YqJebSS2ROrihHKsj/nOOinPHvGZyo2F31CS9x9ZJX0bzA+qcJfiWRlEx9xGSzedi21VtecKNW0ghxG34oSiW7MtBBVLGgKyjoq2Sq/wqc8gcG87Rrtx/SotmgjJb1cI31FI1R6pfJDjd9pD0DSudXz5yn+BFS14u8NrD2URu/VMKrmfpZ7Vdb5pCeM2p3jajeRRu5aJy+oPbTfkNpNW29e7r9SOniB6+PPMHVtZ+DYIQRhSEc2oWEQ+J7baAgRYA+Eo76JwrUbzU+zNH8mEjrZswDZqRM75SufSVR7mskOxz9HKByoOpsJhZsDJ1Xfh2a50KrnWewEOmqLXdWA7mo+XiXK2E6hQMR8z3LTOmjsNjjTbq/vLk7wngxXsPs9lnXkgOff48zycV8Ew/f7bamjYBAHIztMeklqxz0vdP0eoWD3IHB88JOA+o77G9xsO8d2iCR8QaQpA94+u9UTh4ZszZxnqhNQHZjqxsB6Da6xVDV8aSer6vd2sstZK7Ttt+St93R0o0fFBq0N7Z+skOKIA6IFU5UyXnVCK+M8R5wAsnbE3xrlviH2wf8XP7h//PD/94PnH5Va65KwUzXNRMJKxKrlCv1mBnUl1l8eNpvA88IRpKOe7dthz0sJ9OKhG/d8zwmSFNfHo1Nf37v79dksqk5y2+3joaMuvPp5bjyBot2XhIKD+hVlxovNOdAUtf3YnB7NpPGkd6lvC2/Mku/lvkWPai0dNdpKCiSI5O2PC5uZpWHPrPHMEpmAmdWdWWVWVIqrCmMGgttNVLHNVo8LSUy50xo2tQlZqypT0QUkqMwq+lMkqqxg4pf4jncCI7X7JgV0JpqSQ5LqS1aNU7PCDnbCqUmoVvrrnrV3RP9iO6L3x3yXuFJFu0sHbnf47rugIx9/AHEVOgTpFgAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=dc8e20d0c3c01f106346fbfdd4013137"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=008eec90c3c01f106346fbfdd40131f7"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=008eec90c3c01f106346fbfdd40131f7^sys_idNOT IN408e20d0c3c01f106346fbfdd401312f,4c8e20d0c3c01f106346fbfdd401312c,5c8e20d0c3c01f106346fbfdd4013131,d48e20d0c3c01f106346fbfdd4013130"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">5b7eec90c3c01f106346fbfdd401313a</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Licensed Software Installation Approval Flow">008eec90c3c01f106346fbfdd40131f7</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>6</order>
+        <outputs_assigned/>
+        <parent_ui_id>d0fe2749-3f7d-47b6-8ded-545039427e91</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 07:25:06</sys_created_on>
+        <sys_id>408e20d0c3c01f106346fbfdd401312f</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 11:31:05</sys_updated_on>
+        <ui_id>a3e9c1cf-05b1-4f57-ae9b-daccfe912f13</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VTU8bMRD9K8jnTeT9CiQ3BEJCokVqEJcWrWb9kVh17K3tJaRR/nvHu5sEIRBF5dhb/Dyeee/tPGVLbBuaNvg7e+69Whgy+/6QEGUihr+3RGq7vrELxa6ND2CYmG/8NSczMj0TecbSM5YXNJUpneTFRNaSczzmKZyShBhYCaxk1nAVlDVVByTkEXQbL+ZWhjU4cXK7NsKdnDeNs4+CYwVXvtGwuX+3kC2V5k4MvBtwOCEIR2bbF1cqcpYUZDplKcuzSZ5Rmp0VaT3J6zTjOQjIsaGGWmgsvdiTPrnpkLfVhE0TcR+cMovhfDN0me9B63hkldKEiKcgDEf2Mwnai4SswHAI1m0OiBPAb40+AktlArYjsfjJq984MCvLWCgFSmSivzwcq8HAHpaXEACptCy0bihlS6uY8L05XEhodbh4jvUFt02U2j8JUOv9a6vblfnaO0IODfbfC5HWIwnRRKWR+qBDzpd2/W3P8kqZzpXhUlsG+nCCgN7VbYh8tkRoscJG1QqaBh2t4gKo7jFyWY0XGg/juKs4NO7xGFgkPkZjYXyF+GUH34NTUcUXbIOPe5o1eMWqbuexHdokyC4hfuMvNHh/FInuVr/aSLGXPIiren/iE+ZUE85x8qMYdOySz43Qs/Rst1h/WtIURqIs+KiYMDqCKeej04JCIbBFAfkYurCArnB2ELvdj5bSnMObWfusth9L5hRKWaa0fD2ZxeS1ZL5uz0fimL0Tx7gLf5lGSun/OP5zHJWv+hAN2rrhn5jGhxiffubBa6Y8UruL2PX+fy9ebHC5YmaP0Nq6n1HUEdv9ATqzQjpBBwAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">d77eec90c3c01f106346fbfdd4013133</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Licensed Software Installation Approval Flow">008eec90c3c01f106346fbfdd40131f7</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 07:25:06</sys_created_on>
+        <sys_id>4c8e20d0c3c01f106346fbfdd401312c</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 11:31:05</sys_updated_on>
+        <ui_id>d0fe2749-3f7d-47b6-8ded-545039427e91</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXU/bMBT9K8jPaeV8NG36hoqQkGBIA/GyoejGH601185iB+iq/vddJ2mLEGhD6+Pe6nO/zj25R90S2/q69e7enjunlobMvz1GRJmA4e8tkdo+X9ulYlfGeTBM3G3cFSdzUkzyArJ4xtIZjWVM8zTLZSU5z2icxlVGImJgLTCTWcOVV9aUHRCRJ9BtCNyAgaVozs7rurFPgmOIK1dr2Dx8nMFWSvNGDExraLCnFw2Zb9+EVGApKci4YDFLkzxNKE1mWVzlaRUnPAUBKTbUUAmNqYs9zbPrDvmYv9/UAXe+UWY5vK+HLnd70DY8sIppRMSLF4Yj+7kE7URE1mA4eNtsDkgjgN8afQRWynhsR0Lyi1O/cGAymYREKXBFJvrg4VkOyvWwvAAPSKVlvm2GVLayignXi8OFhFb7xWusT7itw6p9iYdK76utbtfmS68IOTTYfyhEWockRB02DdSHPeTdyj5/3bO8VKZTZQhqy0AfXuBRu6r1gc+WCC3W2KhcQ12jomU4ANUVI5f1eKnxMQ7XiUPD5Y6BBeJjFBbGl4hfdPADNCpscYNtsLinWYFTrOyuHNuhTILsIuI2bqHBueOSqG75sw0U+5WH5cpen1DCGlX7c5z8JIY9dtFpTfPKL9ttkmZTmBX5aDrN2SgreDWCWZqPYkmZ5LGcTYt8DJ1ZQJc424vd7ntLacrhQ5Odqu3nnFnARE5iOnnfmVn+njPfl+czdkz+YMdwC3/pRkrpfzv+sx2VK3sTDbt1w0/oxsdgn37mQWumHFK7D9jV/p8uBDZ4XMGzR+jZNj/CUkds9xvbD5+nMwcAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">9f7eec90c3c01f106346fbfdd4013144</block>
+        <comment/>
+        <connected_to>d0fe2749-3f7d-47b6-8ded-545039427e91</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Licensed Software Installation Approval Flow">008eec90c3c01f106346fbfdd40131f7</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>12</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 07:25:06</sys_created_on>
+        <sys_id>5c8e20d0c3c01f106346fbfdd4013131</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 11:31:05</sys_updated_on>
+        <ui_id>cc03a061-44ce-4ffa-b366-2f3ea62bb9d4</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">137eec90c3c01f106346fbfdd4013142</block>
+        <comment/>
+        <connected_to>a3e9c1cf-05b1-4f57-ae9b-daccfe912f13</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Licensed Software Installation Approval Flow">008eec90c3c01f106346fbfdd40131f7</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>10</order>
+        <outputs_assigned/>
+        <parent_ui_id>d0fe2749-3f7d-47b6-8ded-545039427e91</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 07:25:06</sys_created_on>
+        <sys_id>d48e20d0c3c01f106346fbfdd4013130</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 11:31:05</sys_updated_on>
+        <ui_id>ad5a3bd3-884b-4046-b28e-fdaa90e6081d</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=008eec90c3c01f106346fbfdd40131f7"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=008eec90c3c01f106346fbfdd40131f7"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_variable_008eec90c3c01f106346fbfdd40131f7"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>request_item</element>
+        <help/>
+        <hint/>
+        <label>Request Item</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_008eec90c3c01f106346fbfdd40131f7</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 07:25:06</sys_created_on>
+        <sys_id>0c8e20d0c3c01f106346fbfdd4013120</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Licensed Software Installation Automation" source="x_2052380_licens_0">259973e3c3b70b106346fbfdd40131ae</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 07:25:06</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_008eec90c3c01f106346fbfdd40131f7</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 07:25:06</sys_created_on>
+        <sys_id>808e20d0c3c01f106346fbfdd4013115</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Licensed Software Installation Automation" source="x_2052380_licens_0">259973e3c3b70b106346fbfdd40131ae</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Licensed Software Installation Automation">259973e3c3b70b106346fbfdd40131ae</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 07:25:06</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_008eec90c3c01f106346fbfdd40131f7"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_008eec90c3c01f106346fbfdd40131f7"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>f4961054c3001f106346fbfdd401314e</sys_id>
+        <latest_snapshot>008eec90c3c01f106346fbfdd40131f7</latest_snapshot>
+        <compiler_build/>
+        <version_record/>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=f4961054c3001f106346fbfdd401314e^sys_idNOT IN608e20d0c3c01f106346fbfdd40131bf"/>
+    <sys_flow_trigger_plan action="INSERT_OR_UPDATE">
+        <binding_strategy>com.snc.process_flow.engine.binding.RunAlways</binding_strategy>
+        <plan/>
+        <plan_id>f4961054c3001f106346fbfdd401314e</plan_id>
+        <snapshot>008eec90c3c01f106346fbfdd40131f7</snapshot>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-16 07:25:08</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>608e20d0c3c01f106346fbfdd40131bf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-16 07:25:08</sys_updated_on>
+        <trigger display_value="">608e20d0c3c01f106346fbfdd40131be</trigger>
+    </sys_flow_trigger_plan>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=f4961054c3001f106346fbfdd401314e"/>
+</record_update>
